@@ -1,0 +1,16 @@
+name: repo-sanity
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate repository bootstrap files
+        run: |
+          test -f README.md
+          test -f .gitignore
+          test -f docs/flux-premium-requisitos.md

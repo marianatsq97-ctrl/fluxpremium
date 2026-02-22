@@ -1,0 +1,13 @@
+{
+  "name": "Investment",
+  "type": "object",
+  "properties": {
+    "date": { "type": "string", "format": "date", "description": "Data do investimento" },
+    "type": { "type": "string", "description": "Tipo de investimento" },
+    "description": { "type": "string", "description": "Descrição" },
+    "amount": { "type": "number", "description": "Valor investido" },
+    "profile": { "type": "string", "enum": ["eu", "conjuge", "familia"], "description": "Perfil" },
+    "include_in_calc": { "type": "boolean", "default": true, "description": "Incluir no fluxo" }
+  },
+  "required": ["date", "type", "amount", "profile"]
+}

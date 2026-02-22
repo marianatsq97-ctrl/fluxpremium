@@ -1,0 +1,15 @@
+{
+  "name": "Card",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Nome do cartão" },
+    "last_digits": { "type": "string", "description": "Últimos 4 dígitos" },
+    "brand": { "type": "string", "enum": ["visa", "mastercard", "elo", "amex", "hipercard", "outro"], "description": "Bandeira" },
+    "limit": { "type": "number", "description": "Limite" },
+    "closing_day": { "type": "number", "description": "Dia de fechamento" },
+    "due_day": { "type": "number", "description": "Dia de vencimento" },
+    "profile": { "type": "string", "enum": ["eu", "conjuge", "familia"], "description": "Perfil" },
+    "color": { "type": "string", "description": "Cor do cartão" }
+  },
+  "required": ["name", "profile"]
+}

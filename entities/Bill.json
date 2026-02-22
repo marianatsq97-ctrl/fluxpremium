@@ -1,0 +1,15 @@
+{
+  "name": "Bill",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Nome da conta" },
+    "amount": { "type": "number", "description": "Valor" },
+    "due_date": { "type": "string", "format": "date", "description": "Data de vencimento" },
+    "category": { "type": "string", "description": "Categoria" },
+    "profile": { "type": "string", "enum": ["eu", "conjuge", "casal", "familia"], "description": "Perfil" },
+    "status": { "type": "string", "enum": ["pendente", "pago", "atrasado"], "default": "pendente", "description": "Status" },
+    "is_recurring": { "type": "boolean", "default": false, "description": "Conta recorrente" },
+    "notes": { "type": "string", "description": "Observações" }
+  },
+  "required": ["name", "amount", "due_date", "profile"]
+}
