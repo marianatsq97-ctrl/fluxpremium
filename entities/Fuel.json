@@ -1,0 +1,16 @@
+{
+  "name": "Fuel",
+  "type": "object",
+  "properties": {
+    "date": { "type": "string", "format": "date", "description": "Data do abastecimento" },
+    "vehicle": { "type": "string", "description": "Veículo" },
+    "fuel_type": { "type": "string", "enum": ["gasolina", "etanol", "diesel", "gnv"], "description": "Tipo de combustível" },
+    "liters": { "type": "number", "description": "Litros" },
+    "price_per_liter": { "type": "number", "description": "Preço por litro" },
+    "total_amount": { "type": "number", "description": "Valor total" },
+    "odometer": { "type": "number", "description": "Quilometragem" },
+    "station": { "type": "string", "description": "Posto" },
+    "profile": { "type": "string", "enum": ["eu", "conjuge", "familia"], "description": "Perfil" }
+  },
+  "required": ["date", "fuel_type", "total_amount", "profile"]
+}

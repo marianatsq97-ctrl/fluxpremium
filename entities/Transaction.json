@@ -1,0 +1,20 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "date": { "type": "string", "format": "date", "description": "Data do lançamento" },
+    "type": { "type": "string", "enum": ["receita", "despesa", "investimento"], "description": "Tipo do lançamento" },
+    "profile": { "type": "string", "enum": ["eu", "conjuge", "casal", "familia"], "description": "Perfil do lançamento" },
+    "category": { "type": "string", "description": "Categoria do lançamento" },
+    "description": { "type": "string", "description": "Descrição do lançamento" },
+    "amount": { "type": "number", "description": "Valor do lançamento" },
+    "recurrence": { "type": "string", "enum": ["sem_recorrencia", "conta_fixa_mensal", "compra_parcelada"], "default": "sem_recorrencia", "description": "Recorrência" },
+    "installments": { "type": "number", "default": 1, "description": "Número de parcelas" },
+    "current_installment": { "type": "number", "default": 1, "description": "Parcela atual" },
+    "include_in_calc": { "type": "boolean", "default": true, "description": "Incluir nos cálculos" },
+    "origin": { "type": "string", "enum": ["manual", "importacao", "investimento", "emprestimo", "combustivel"], "default": "manual", "description": "Origem do lançamento" },
+    "card": { "type": "string", "description": "Cartão associado" },
+    "parent_id": { "type": "string", "description": "ID do lançamento pai (para parcelas)" }
+  },
+  "required": ["date", "type", "profile", "category", "amount"]
+}

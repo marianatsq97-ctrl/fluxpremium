@@ -1,0 +1,15 @@
+{
+  "name": "Loan",
+  "type": "object",
+  "properties": {
+    "date": { "type": "string", "format": "date", "description": "Data do empréstimo" },
+    "type": { "type": "string", "enum": ["peguei", "emprestei"], "description": "Tipo" },
+    "person": { "type": "string", "description": "Pessoa envolvida" },
+    "description": { "type": "string", "description": "Descrição" },
+    "amount": { "type": "number", "description": "Valor" },
+    "status": { "type": "string", "enum": ["pendente", "pago", "recebido"], "default": "pendente", "description": "Status" },
+    "profile": { "type": "string", "enum": ["eu", "conjuge", "familia"], "description": "Perfil" },
+    "include_in_calc": { "type": "boolean", "default": false, "description": "Incluir no fluxo" }
+  },
+  "required": ["date", "type", "person", "amount", "profile"]
+}
